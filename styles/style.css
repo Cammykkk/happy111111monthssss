@@ -35,8 +35,10 @@ body {
 .intro-container {
     background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
     padding: 8vh 10vw; /* Padding responsivo basado en el viewport height/width */
+    border: var(--pixel-border);
     animation: fadeIn 2s ease-out; /* Tu animación de entrada */
     position: relative;
+    z-index: 2; /* Asegura que esté por encima de elementos de fondo */
     max-width: 900px; /* Limita el ancho máximo en pantallas muy grandes */
     width: 90%; /* Porcentaje del ancho disponible */
     box-shadow: var(--pixel-shadow); /* Asegúrate de que esta variable esté definida */
@@ -98,7 +100,7 @@ body {
         padding: 4vh 6vw; /* Más reducción de padding */
         border-width: 3px; /* Borde un poco más delgado */
         border-radius: 10px; /* Menos redondeado */
-        box-shadow: 4px 4px 0px 0px var(--dark-shadow-color); /* Sombra más pequeña */
+      
     }
 
     .game-title {
@@ -928,4 +930,5 @@ body {
     }
 
 }
+
 
