@@ -35,7 +35,8 @@ body {
     padding: 8vh 10vw; /* Padding responsivo basado en el viewport height/width */
     border: var(--pixel-border);
     animation: fadeIn 2s ease-out; /* Tu animación de entrada */
-    position: relative;
+    position: center;
+     max-width: 1920px; /* Limita el ancho máximo en pantallas muy grandes */
     width: 90%; /* Porcentaje del ancho disponible */
     margin: auto; /* Centra el contenedor con margen automático */
 }
@@ -924,6 +925,7 @@ body {
     }
 
 }
+
 
 
 
