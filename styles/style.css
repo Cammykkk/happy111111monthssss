@@ -35,11 +35,9 @@ body {
 .intro-container {
     background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
     padding: 8vh 10vw; /* Padding responsivo basado en el viewport height/width */
-    border: var(--pixel-border);
     animation: fadeIn 2s ease-out; /* Tu animación de entrada */
     position: relative;
     max-width: 900px; /* Limita el ancho máximo en pantallas muy grandes */
-    display: flex;
     width: 90%; /* Porcentaje del ancho disponible */
     box-shadow: var(--pixel-shadow); /* Asegúrate de que esta variable esté definida */
     margin: auto; /* Centra el contenedor con margen automático */
@@ -930,3 +928,4 @@ body {
     }
 
 }
+
