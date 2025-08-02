@@ -7,7 +7,6 @@
     --secondary-color: #b1317e; /* Rojo de videojuego */
     --text-color: #ffffff;
     --background-dark: #a9ecff;
-    --pixel-shadow: 6px 6px 0px rgba(0,0,0,0.5);
 }
 
 body {
@@ -22,7 +21,6 @@ body {
     background-image: url('https://static.vecteezy.com/system/resources/previews/042/818/355/non_2x/8bit-pixel-graphic-blue-sky-background-with-clouds-vector.jpg'); /* Imagen de fondo de videojuego */
     background-size: cover;
     background-position: center;
-    min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
     display: flex;
     flex-direction: column; /* Apila el contenedor y el footer */
     justify-content: center; /* Centra el contenido principal verticalmente */
@@ -926,6 +924,7 @@ body {
     }
 
 }
+
 
 
 
