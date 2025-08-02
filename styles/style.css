@@ -17,59 +17,69 @@ body {
     background-color: var(--background-dark);
 }
 
+/* --- ESTILOS DE LA PÁGINA INDEX (General) --- */
 .index-page {
     background-image: url('https://static.vecteezy.com/system/resources/previews/042/818/355/non_2x/8bit-pixel-graphic-blue-sky-background-with-clouds-vector.jpg'); /* Imagen de fondo de videojuego */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Apila el contenedor y el footer */
-    justify-content: center; /* Centra el contenido principal verticalmente */
-    align-items: center;     /* Centra el contenido principal horizontalmente */
-    text-align: center;      /* Centra el texto dentro de los elementos */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
-    overflow: hidden; /* Previene desbordamientos si hay animaciones fuera de pantalla */
+    overflow: hidden;
 }
 
 .intro-container {
     background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
-    padding: 8vh 10vw; /* Padding responsivo basado en el viewport height/width */
+    padding: 50px 60px;
     border: var(--pixel-border);
-    animation: fadeIn 2s ease-out; /* Tu animación de entrada */
-    position: center;
-     max-width: 1920px; /* Limita el ancho máximo en pantallas muy grandes */
-    width: 90%; /* Porcentaje del ancho disponible */
-    margin: auto; /* Centra el contenedor con margen automático */
+    border-radius: 20px;
+    /* QUITAMOS LA SOMBRA DE AQUÍ */
+    animation: fadeIn 2s ease-out;
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
 }
 
 .game-title {
-    font-family: var(--game-font); /* Tu fuente pixelada */
-    font-size: clamp(2.5em, 8vw, 5em); /* **CRÍTICO:** Tamaño de fuente adaptable */
+    font-family: var(--game-font);
+    font-size: 4.5em;
     color: var(--primary-color);
-    text-shadow: 5px 5px 0px var(--secondary-color);
-    animation: bounceIn 1.5s ease-out; /* Tu animación */
-    line-height: 1.2; /* Espaciado de línea para que no se pegue */
+    text-shadow: 5px 5px 0px var(--secondary-color); /* Esta sombra es del texto, no del borde */
+    margin-bottom: 60px;
+    animation: bounceIn 1.5s ease-out;
+    line-height: 1.2;
+    word-break: break-word;
 }
 
 .play-button {
     background-color: var(--secondary-color);
     color: var(--text-color);
     border: var(--pixel-border);
-    padding: clamp(12px, 3vw, 20px) clamp(30px, 6vw, 50px); /* Padding adaptable */
-    font-size: clamp(1.5em, 4vw, 2.5em); /* Tamaño de fuente adaptable */
+    padding: 18px 45px;
+    font-size: 2.2em;
     cursor: pointer;
-    box-shadow: var(--pixel-shadow);
+    /* QUITAMOS LA SOMBRA DE AQUÍ */
     transition: transform 0.2s ease, background-color 0.2s ease;
     font-family: var(--game-font);
     position: relative;
-    overflow: hidden; /* Para cualquier efecto interno que puedas añadir */
-    display: inline-block; /* Para que el padding y el margin funcionen bien */
-    text-decoration: none; /* Si es un enlace */
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 
 .play-button:hover {
     transform: scale(1.05);
-    background-color: #811649; /* Asegúrate de que este color combine */
+    background-color: #811649;
 }
 
 .play-button:active {
@@ -77,40 +87,100 @@ body {
 }
 
 .footer {
-    color: var(--secondary-color); /* Color del footer */
+    color: var(--secondary-color);
     font-family: var(--game-font);
-    font-size: clamp(0.7em, 2vw, 1em); /* Tamaño de fuente adaptable */
-    margin-top: 5vh; /* Margen superior adaptable */
-    position: absolute; /* Posicionamiento absoluto para que esté al final de la página */
+    font-size: 0.9em;
+    margin-top: 5vh;
+    position: absolute;
     bottom: 20px;
     width: 100%;
     text-align: center;
-    z-index: 1; /* Para que esté debajo del contenedor principal */
+    z-index: 1;
 }
 
+/* ========================================= */
+/* === MEDIA QUERIES PARA ADAPTAR A DISPOSITIVOS === */
+/* ========================================= */
 
-/* Ajustes para pantallas de teléfonos pequeños */
-@media (max-width: 480px) {
+/* --- AJUSTES PARA TABLETAS (horizontal y vertical) --- */
+@media (max-width: 1024px) {
     .intro-container {
-        padding: 4vh 6vw; /* Más reducción de padding */
-        border-width: 3px; /* Borde un poco más delgado */
-        border-radius: 10px; /* Menos redondeado */
-      
+        padding: 40px 50px;
+        border-radius: 18px;
+        /* QUITAMOS LA SOMBRA DE AQUÍ */
     }
 
     .game-title {
-        /* Clamp ya debería manejar esto */
-        text-shadow: 3px 3px 0px var(--secondary-color); /* Sombra de texto más pequeña */
+        font-size: 3.5em;
+        margin-bottom: 50px;
+        text-shadow: 4px 4px 0px var(--secondary-color);
     }
 
     .play-button {
-        /* Clamp ya debería manejar esto */
-        border-width: 3px; /* Borde del botón más delgado */
+        padding: 16px 40px;
+        font-size: 1.8em;
+        border-width: 3px; /* Mantener este borde si quieres */
+        /* QUITAMOS LA SOMBRA DE AQUÍ */
     }
 
     .footer {
-        /* Clamp ya debería manejar esto */
-        bottom: 10px; /* Aún más cerca del borde inferior */
+        font-size: 0.8em;
+        bottom: 15px;
+    }
+}
+
+/* --- AJUSTES PARA CELULARES (horizontal y vertical, y tabletas pequeñas) --- */
+@media (max-width: 768px) {
+    .intro-container {
+        padding: 30px 40px;
+        width: 95%;
+        border-width: 3px;
+        border-radius: 15px;
+        /* QUITAMOS LA SOMBRA DE AQUÍ */
+    }
+
+    .game-title {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        text-shadow: 3px 3px 0px var(--secondary-color);
+    }
+
+    .play-button {
+        padding: 14px 30px;
+        font-size: 1.5em;
+        border-width: 3px;
+        /* QUITAMOS LA SOMBRA DE AQUÍ */
+    }
+
+    .footer {
+        font-size: 0.7em;
+        bottom: 10px;
+    }
+}
+
+/* --- AJUSTES PARA CELULARES PEQUEÑOS (vertical) --- */
+@media (max-width: 480px) {
+    .intro-container {
+        padding: 25px 30px;
+        border-radius: 10px;
+        /* QUITAMOS LA SOMBRA DE AQUÍ */
+    }
+
+    .game-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 0px var(--secondary-color);
+    }
+
+    .play-button {
+        padding: 12px 25px;
+        font-size: 1.2em;
+        /* QUITAMOS LA SOMBRA DE AQUÍ */
+    }
+
+    .footer {
+        font-size: 0.6em;
+        bottom: 5px;
     }
 }
    
@@ -925,6 +995,7 @@ body {
     }
 
 }
+
 
 
 
